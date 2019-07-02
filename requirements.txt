@@ -1,0 +1,10 @@
+Flask
+Flask-Session
+psycopg2
+SQLAlchemy
+Flask-Login
+sqlalchemy.orm
+wtforms
+passlib.hash
+functools
+simplejson

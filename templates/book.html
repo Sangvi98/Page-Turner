@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+	<div class="row">
+		<div class="col-md-4 px-0 book-image">
+			<img src="http://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg" align="center" />
+		</div>
+		<div class="col-md-4 px-0">
+			<h1 class="display-4 font-italic">{{book.title}}</h1>
+			<p class="lead my-3">Author: {{book.author}}</p>
+			<p class="lead my-3">Published in: {{book.year}}</p>
+			<p class="lead my-3">ISBN: {{book.isbn}}</p>
+			<p class="lead my-2">Goodreads Average Rating: {{goodreadsinfo['average_rating']}}</p>
+			<p class="lead my-2">Goodreads number of ratings: {{goodreadsinfo['work_ratings_count']}}</p>
+		</div>
+	</div>
+	{% if canReview %}
+	<div class="row">
+    	<div class="col-md-4 text-center">
+			<button class="btn btn-light" id="reviewbtn">
+	            <a style="text-decoration:none" href="{{ url_for('addReview', book_id=book.id) }}">Add Review</a>
+	        </button>
+	    </div>
+	</div>
+{% endif %}
+	
+</div>
+
+
+
+<hr>
+{% for review in reviews %}
+
+<div class="blog-post">
+        <h6 class="blog-post-meta">{{review.author}} gave this book {%if review.rating == 1%} <span class="fa fa-star checked"></span> {% elif review.rating == 2%} <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span> {% elif review.rating == 3%}<span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked">{% elif review.rating == 4%}<span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked">{% elif review.rating == 5%}<span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked"><span class="fa fa-star checked">{% endif %}</a></h6>
+        
+        <p>{{review.body}}</p>
+      </div><!-- /.blog-post -->
+      <hr>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+	<html>
+		<head> 
+			<meta charset="utf-8">
+			<title>Page Turner</title>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<style>
+				body { 
+					padding-top: 65px;
+				}
+				#booktitle {
+					text-align: center;
+				}
+				.checked {
+				  color: orange;
+				}
+
+				#reviewbtn {
+					
+				}
+
+				.main {
+				    width: 100%;
+				    margin: 50px auto;
+				}
+				
+				.book-image{
+					text-align: center;
+				}
+				/* Bootstrap 4 text input with search icon */
+
+				.has-search .form-control {
+				    padding-left: 2.375rem;
+				}
+				a { color: inherit; } 
+
+
+				.has-search .form-control-feedback {
+				    position: absolute;
+				    z-index: 2;
+				    display: block;
+				    width: 2.375rem;
+				    height: 2.375rem;
+				    line-height: 2.375rem;
+				    text-align: center;
+				    pointer-events: none;
+				    color: #aaa;
+				}
+
+				#inlineFormCustomSelect {
+					width:10%;
+				}
+			</style>
+		</head>
+		<body>
+			{% include 'includes/_navbar.html' %}
+			<div class="container">
+				{% include 'includes/_messages.html' %}
+				{% block body %} {% endblock %}
+			</div>
+		</body>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</html>

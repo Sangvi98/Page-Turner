@@ -1,0 +1,4 @@
+information for GoodReads API 
+
+key: 7OJj9liuJX1PeOn5pRW1A
+secret: 6pcZSGD7Z8m4py9YQ5MR2l9d7BWRbwFUvEkcwi3n4Cs
