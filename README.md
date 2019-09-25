@@ -1,3 +1,3 @@
-# Project 1
+# Page Turner 
 
-Web Programming with Python and JavaScript
+Python web application made using Flask. 
